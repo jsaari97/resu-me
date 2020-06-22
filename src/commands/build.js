@@ -9,7 +9,7 @@ class BuildCommand extends BaseCommand {
     const config = await this.loadConfig();
     this.log(config);
 
-    // set Node env
+    // set env
     process.env.NODE_ENV = "production";
 
     const { options } = await this.loadRollupConfig();

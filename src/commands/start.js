@@ -7,14 +7,13 @@ class StartCommand extends BaseCommand {
       const config = await this.loadConfig();
       this.log(config);
 
-      // set Node env
+      // set env
       process.env.NODE_ENV = "development";
 
       const { options } = await this.loadRollupConfig();
 
       await rollup.rollup(options[0]);
 
-      // You can also pass this directly to "rollup.watch"
       const watcher = rollup.watch(options);
 
       watcher.on("change", () => {
