@@ -6,7 +6,11 @@
   "author": "Jim Saari",
   "license": "MIT",
   "dependencies": {
-    "svelte": "^3.23.2",
-    "resu-me": "link:.."
+    "resu-me": "link:..",
+    "svelte": "^3.23.2"
+  },
+  "scripts": {
+    "start": "../bin/run start",
+    "build": "../bin/run build"
   }
 }

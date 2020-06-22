@@ -1,19 +1,62 @@
 {
   "name": "resu-me",
-  "version": "0.1.0",
-  "description": "Resume generator library powered by Svelte",
-  "main": "index.js",
-  "author": "Jim Saari",
-  "license": "MIT",
+  "description": "Resume generation powered by Svelte",
+  "version": "0.0.0",
+  "author": "Jim Saari @jsaari97",
+  "bin": {
+    "resu-me": "./bin/run"
+  },
+  "bugs": "https://github.com/jsaari97/resu-me/issues",
   "peerDependencies": {
     "svelte": "^3.0.0"
   },
+  "dependencies": {
+    "@oclif/command": "^1.0.0",
+    "@oclif/config": "^1.0.0",
+    "@oclif/errors": "^1.2.2",
+    "@oclif/plugin-help": "^3.0.0"
+  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^12.0.0",
+    "@oclif/dev-cli": "^1.0.0",
+    "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2"
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/jsaari97/resu-me",
+  "keywords": [
+    "resume",
+    "svelte",
+    "cli"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "resu-me",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "jsaari97/resu-me",
+  "scripts": {
+    "posttest": "eslint .",
+    "prepack": "oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
   }
 }
