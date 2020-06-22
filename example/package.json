@@ -1,0 +1,12 @@
+{
+  "name": "resu-me-example",
+  "version": "0.0.0",
+  "description": "Example usage of resu-me library",
+  "main": "index.js",
+  "author": "Jim Saari",
+  "license": "MIT",
+  "dependencies": {
+    "svelte": "^3.23.2",
+    "resu-me": "link:.."
+  }
+}

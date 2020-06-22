@@ -1,0 +1,19 @@
+{
+  "name": "resu-me",
+  "version": "0.1.0",
+  "description": "Resume generator library powered by Svelte",
+  "main": "index.js",
+  "author": "Jim Saari",
+  "license": "MIT",
+  "peerDependencies": {
+    "svelte": "^3.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2"
+  }
+}
