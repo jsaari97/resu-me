@@ -1,5 +1,7 @@
 const BaseCommand = require("../base");
 const rollup = require("rollup");
+const sirv = require("sirv");
+const polka = require("polka");
 
 class BuildCommand extends BaseCommand {
   async run() {
@@ -12,6 +14,10 @@ class BuildCommand extends BaseCommand {
     const { options } = await this.loadRollupConfig();
 
     await rollup.rollup(options[0]);
+
+    const app = polka().use(sirv("public")).listen(5000);
+
+    setTimeout(() => app.server.close(), 2000);
   }
 }
 
