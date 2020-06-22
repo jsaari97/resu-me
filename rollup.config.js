@@ -5,7 +5,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import sirv from "sirv-cli";
 
-const production = !process.env.ROLLUP_WATCH;
+const production = process.env.NODE_ENV === "production";
 
 export default {
   input: path.resolve(__dirname, "src/ui/index.js"),
@@ -39,11 +39,11 @@ export default {
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
-    serve(),
+    !production && serve(),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    livereload("public"),
+    !production && livereload("public"),
   ],
   watch: {
     clearScreen: false,

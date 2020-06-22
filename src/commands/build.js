@@ -1,11 +1,28 @@
 const BaseCommand = require("../base");
-const { flags } = require("@oclif/command");
+const loadConfigFile = require("rollup/dist/loadConfigFile");
+const path = require("path");
+const rollup = require("rollup");
 
 class BuildCommand extends BaseCommand {
   async run() {
-    const { flags } = this.parse(BuildCommand);
-    const name = flags.name || "world";
-    this.log(`hello ${name} from ./src/commands/build.js`);
+    const config = await this.loadConfig();
+    this.log(config);
+
+    // set Node env
+    process.env.NODE_ENV = "production";
+
+    loadConfigFile(path.resolve(__dirname, "../../rollup.config.js"), {
+      format: "es",
+    }).then(async ({ options, warnings }) => {
+      // "warnings" wraps the default `onwarn` handler passed by the CLI.
+      // This prints all warnings up to this point:
+      this.log(`We currently have ${warnings.count} warnings`);
+
+      // This prints all deferred warnings
+      warnings.flush();
+
+      await rollup.rollup(options[0]);
+    });
   }
 }
 
@@ -13,9 +30,5 @@ BuildCommand.description = `Describe the command here
 ...
 Extra documentation goes here
 `;
-
-BuildCommand.flags = {
-  name: flags.string({ char: "n", description: "name to print" }),
-};
 
 module.exports = BuildCommand;

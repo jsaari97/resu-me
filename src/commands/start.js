@@ -8,6 +8,9 @@ class StartCommand extends BaseCommand {
     const config = await this.loadConfig();
     this.log(config);
 
+    // set Node env
+    process.env.NODE_ENV = "development";
+
     loadConfigFile(path.resolve(__dirname, "../../rollup.config.js"), {
       format: "es",
     }).then(async ({ options, warnings }) => {
@@ -18,16 +21,16 @@ class StartCommand extends BaseCommand {
       // This prints all deferred warnings
       warnings.flush();
 
-      // options is an "inputOptions" object with an additional "output"
-      // property that contains an array of "outputOptions".
-      // The following will generate all outputs and write them to disk the same
-      // way the CLI does it:
       const bundle = await rollup.rollup(options[0]);
 
       this.log(bundle);
 
       // You can also pass this directly to "rollup.watch"
-      rollup.watch(options);
+      const watcher = rollup.watch(options);
+
+      watcher.on("change", () => {
+        this.log("bundle updated");
+      });
     });
   }
 }
