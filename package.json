@@ -16,6 +16,7 @@
     "@oclif/errors": "^1.2.2",
     "@oclif/plugin-help": "^3.0.0",
     "polka": "^0.5.2",
+    "puppeteer": "^4.0.0",
     "sirv": "^1.0.1",
     "sirv-cli": "^1.0.1"
   },
