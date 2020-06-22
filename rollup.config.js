@@ -1,13 +1,14 @@
 import svelte from "rollup-plugin-svelte";
+import path from "path";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
+import sirv from "sirv-cli";
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: "src/main.js",
+  input: path.resolve(__dirname, "src/ui/index.js"),
   output: {
     sourcemap: true,
     format: "iife",
@@ -37,17 +38,11 @@ export default {
     }),
     commonjs(),
 
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
+    serve(),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
     !production && livereload("public"),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
   ],
   watch: {
     clearScreen: false,
@@ -62,10 +57,7 @@ function serve() {
       if (!started) {
         started = true;
 
-        require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        });
+        sirv("public", { port: 3000 });
       }
     },
   };

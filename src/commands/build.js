@@ -1,6 +1,7 @@
-const { Command, flags } = require("@oclif/command");
+const BaseCommand = require("../base");
+const { flags } = require("@oclif/command");
 
-class BuildCommand extends Command {
+class BuildCommand extends BaseCommand {
   async run() {
     const { flags } = this.parse(BuildCommand);
     const name = flags.name || "world";

@@ -1,3 +1,10 @@
 {
-  "extends": ["oclif", "plugin:prettier/recommended"]
+  "extends": ["oclif", "plugin:prettier/recommended"],
+  "rules": {
+    "node/no-unsupported-features/es-syntax": false
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
 }
