@@ -22,7 +22,6 @@ class StartCommand extends BaseCommand {
       // property that contains an array of "outputOptions".
       // The following will generate all outputs and write them to disk the same
       // way the CLI does it:
-      console.log(options);
       const bundle = await rollup.rollup(options[0]);
 
       this.log(bundle);

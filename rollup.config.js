@@ -19,7 +19,6 @@ export default {
     svelte({
       // enable run-time checks when not in production
       dev: !production,
-      generate: "ssr",
       // we'll extract any component CSS out into
       // a separate file - better for performance
       css: (css) => {
@@ -38,11 +37,13 @@ export default {
     }),
     commonjs(),
 
+    // In dev mode, call `npm run start` once
+    // the bundle has been generated
     serve(),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("public"),
+    livereload("public"),
   ],
   watch: {
     clearScreen: false,
@@ -57,7 +58,7 @@ function serve() {
       if (!started) {
         started = true;
 
-        sirv("public", { port: 3000 });
+        sirv("public", { port: 5000 });
       }
     },
   };
