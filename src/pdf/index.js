@@ -1,16 +1,22 @@
 const puppeteer = require("puppeteer");
 
 const saveAsPdf = async (path) => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  let browser = null;
 
-  await page.goto(path);
+  try {
+    browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
-  await page.pdf({
-    path: "example.pdf",
-  });
+    await page.goto(path);
 
-  await browser.close();
+    await page.pdf({
+      path: "example.pdf",
+    });
+  } finally {
+    if (browser) {
+      await browser.close();
+    }
+  }
 };
 
 exports.saveAsPdf = saveAsPdf;
