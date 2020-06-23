@@ -8,3 +8,4 @@ node_modules/
 .DS_Store
 /example/public/build
 *.pdf
+example/build

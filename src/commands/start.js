@@ -1,23 +1,22 @@
 const BaseCommand = require("../base");
-const rollup = require("rollup");
+const bs = require("browser-sync").create();
 
 class StartCommand extends BaseCommand {
   async run() {
     try {
-      const config = await this.loadConfig();
-      this.log(config);
+      await this.build();
 
-      // set env
-      process.env.NODE_ENV = "development";
+      bs.watch("{resu-me.config.js,src/**/*,public/**/*}").on(
+        "change",
+        async () => {
+          delete require.cache[require.resolve(this.configPath)];
+          await this.build();
+          bs.reload();
+        }
+      );
 
-      const { options } = await this.loadRollupConfig();
-
-      await rollup.rollup(options[0]);
-
-      const watcher = rollup.watch(options);
-
-      watcher.on("change", () => {
-        this.log("bundle updated");
+      bs.init({
+        server: this.buildPath,
       });
     } catch (error) {
       this.error(error);
@@ -25,7 +24,7 @@ class StartCommand extends BaseCommand {
   }
 }
 
-StartCommand.description = `Describe the command here
+StartCommand.description = `Develop your resume
 ...
 Extra documentation goes here
 `;
