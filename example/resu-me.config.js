@@ -1,11 +1,10 @@
 module.exports = {
-  languages: ["en"],
-
   main: [
     {
       component: "header",
       props: {
         name: "John Doe",
+        title: "Web Developer",
         birthDate: "1970-01-01",
         email: "john.doe@example.local",
         phone: "+358 000 000000",
