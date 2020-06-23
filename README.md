@@ -1,6 +1,6 @@
 # Resu-me
 
-Resume generation powered by Svelte. Export as HTML or PDF.
+Resume generation powered by Svelte. Exports as HTML and PDF.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/resu-me.svg)](https://npmjs.org/package/resu-me)
@@ -27,7 +27,7 @@ resu-me build
 
 ## Start
 
-Starts the development server under `http://localhost:3000`. Watches for file changes and updates accordingly.
+Starts the development server under http://localhost:3000. Watches for file changes and updates accordingly.
 
 ```bash
 resu-me start
