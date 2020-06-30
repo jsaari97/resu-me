@@ -1,6 +1,6 @@
 {
   "name": "resu-me",
-  "description": "Resume generation powered by Svelte",
+  "description": "Resume management powered by Svelte with PDF and HTML support",
   "version": "0.0.0",
   "author": "Jim Saari @jsaari97",
   "bin": {
@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/jsaari97/resu-me/issues",
   "peerDependencies": {
+    "puppeteer": "^4.0.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
@@ -15,8 +16,7 @@
     "@oclif/config": "^1.0.0",
     "@oclif/errors": "^1.2.2",
     "@oclif/plugin-help": "^3.0.0",
-    "copyfiles": "^2.3.0",
-    "puppeteer": "^4.0.0"
+    "copyfiles": "^2.3.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.0.0",
@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
+    "puppeteer": "^4.0.1",
     "svelte": "^3.0.0"
   },
   "engines": {
