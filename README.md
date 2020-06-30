@@ -1,6 +1,6 @@
 # Resu-me
 
-Resume generation powered by Svelte. Exports as HTML and PDF.
+Resume management powered by Svelte. Exports as HTML and PDF.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/resu-me.svg)](https://npmjs.org/package/resu-me)
@@ -10,7 +10,7 @@ Resume generation powered by Svelte. Exports as HTML and PDF.
 # Features
 
 - Templating using Svelte, or just plain HTML :clipboard:
-- Outputs both HTML and PDF :page_facing_up:
+- Output as HTML and PDF :page_facing_up:
 - Blazingly fast :fire:
 
 # Usage
