@@ -19,7 +19,6 @@
     "copyfiles": "^2.3.0"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.0.0",
     "browser-sync": "^2.26.7",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1.0",
@@ -41,7 +40,8 @@
     "resume",
     "svelte",
     "cli",
-    "pdf"
+    "pdf",
+    "html"
   ],
   "license": "MIT",
   "main": "src/index.js",
@@ -55,8 +55,6 @@
   "repository": "jsaari97/resu-me",
   "scripts": {
     "posttest": "eslint .",
-    "prepack": "oclif-dev readme",
-    "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "test": "echo NO TESTS"
   }
 }

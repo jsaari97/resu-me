@@ -2,7 +2,6 @@
 
 Resume management powered by Svelte. Exports as HTML and PDF.
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/resu-me.svg)](https://npmjs.org/package/resu-me)
 [![Downloads/week](https://img.shields.io/npm/dw/resu-me.svg)](https://npmjs.org/package/resu-me)
 [![License](https://img.shields.io/npm/l/resu-me.svg)](https://github.com/jsaari97/resu-me/blob/master/package.json)
