@@ -6,7 +6,7 @@
   "author": "Jim Saari",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^4.0.1",
+    "puppeteer": "link:../node_modules/puppeteer",
     "resu-me": "link:..",
     "svelte": "^3.23.2"
   },

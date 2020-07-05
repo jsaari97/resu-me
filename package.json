@@ -8,7 +8,7 @@
   },
   "bugs": "https://github.com/jsaari97/resu-me/issues",
   "peerDependencies": {
-    "puppeteer": "^4.0.0",
+    "puppeteer": "^5.0.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
-    "puppeteer": "^4.0.1",
+    "puppeteer": "^5.0.0",
     "svelte": "^3.0.0"
   },
   "engines": {
