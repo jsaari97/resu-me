@@ -8,7 +8,7 @@
   "dependencies": {
     "puppeteer": "link:../node_modules/puppeteer",
     "resu-me": "link:..",
-    "svelte": "^3.23.2"
+    "svelte": "link:../node_modules/svelte"
   },
   "scripts": {
     "start": "../bin/run start",
